@@ -17,6 +17,6 @@ public class AdminDeleteEventServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         int id = Integer.parseInt(req.getParameter("id"));
         eventRepository.deleteById(id);
-        resp.sendRedirect("/events");
+        resp.sendRedirect(req.getContextPath() + "/events");
     }
 }

@@ -17,11 +17,12 @@ public class AdminCreateEventServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        System.out.println("AdminCreateEventServlet: Processing GET request");
         req.getRequestDispatcher("/views/admin/create-event.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         LocalDate date = LocalDate.parse(req.getParameter("date"));
         String location = req.getParameter("location");
@@ -32,6 +33,6 @@ public class AdminCreateEventServlet extends HttpServlet {
         event.setLocation(location);
 
         eventRepository.save(event);
-        resp.sendRedirect("/events");
+        resp.sendRedirect(req.getContextPath() + "/events");
     }
 }

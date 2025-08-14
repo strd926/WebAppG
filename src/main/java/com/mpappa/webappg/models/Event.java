@@ -8,15 +8,14 @@ public class Event {
     private LocalDate date;
     private String location;
 
+    public Event() {
+    }
+
     public Event(int id, String name, LocalDate date, String location){
         this.id = id;
         this.name = name;
         this.date = date;
         this.location = location;
-    }
-
-    public Event() {
-
     }
 
     public int getId() { return id; }

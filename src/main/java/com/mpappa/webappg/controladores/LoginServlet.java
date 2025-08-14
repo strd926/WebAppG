@@ -34,9 +34,9 @@ public class LoginServlet extends HttpServlet{
             lastLogin.setMaxAge(60 * 60 * 24 * 7); //1 semana
             resp.addCookie(lastLogin);
 
-            resp.sendRedirect("/events");
+            resp.sendRedirect(req.getContextPath() + "/events");
         } else {
-            resp.sendRedirect("/login?err=1");
+            resp.sendRedirect(req.getContextPath() + "/login?err=1");
         }
     }
 }

@@ -39,6 +39,9 @@
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Registrar</button>
+
+        <a href="${pageContext.request.contextPath}/login" class="btn btn-secondary">Volver al Inicio</a>
+
 </form>
 
 </body>
